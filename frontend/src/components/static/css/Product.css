@@ -1,0 +1,37 @@
+/* external.css */
+
+/* Style for the card container */
+.card-contaniner {
+    border: 1px solid #ccc;
+    margin: 10px;
+  }
+  
+  /* Style for the card title */
+  
+  /* Style for the card image */
+  .card-img {
+    max-height: 200px; /* Adjust this as needed */
+    object-fit: scale-down; /* To maintain aspect ratio */
+  }
+  /* Styling for single product page */
+.single-product-img {
+  max-height: 400px;
+  max-width: 600px;
+  object-fit:scale-down; /* To maintain aspect ratio */
+}
+.card-contaniner{
+  border: none;
+}
+  /* Style for the card description */
+  .card-contaniner div:nth-child(1) {
+    font-size: 14px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; /* Show ellipsis (...) for overflow */
+  }
+  .card-contaniner h3 {
+    /* font-size: 18px; */
+    margin-bottom: 10px;
+  }
+  
+  

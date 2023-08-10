@@ -2,26 +2,27 @@ import { useState,useEffect } from "react";
 import React from "react";
 import { Col, Row } from "react-bootstrap";
 import Product from "../Product";
+import axios from 'axios'
 
 function HomeScreen() {
-  const [data, setData] = useState([]);
+  const [products, setProducts] = useState([]);
   useEffect(() => {
-    fetch("https://dummyjson.com/products?limit=10&skip=10&select=title,price,image")
-    .then((res) => res.json())
-    .then((data) => {
-      setData(data.products);
-      console.log(data.products);
-    });
-  }, [])
+    async function fetchAllProducts(){
+
+      await axios.get('api/products').then(data=>setProducts(data.data))
+      console.log(products);
+    }
+    fetchAllProducts()
+  },[])
   
 
   return (
     <div>
       <h2 className="text-center">Lates Products</h2>
       <Row>
-        {data.map((e, index) => (
+        {products.map((e, index) => (
           <Col sm={12} md={6} lg={4} xl={3} key={index}>
-            <Product Products={e}/> 
+            <Product product={e}/> 
           </Col>
         ))}
       </Row>
