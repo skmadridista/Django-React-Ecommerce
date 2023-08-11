@@ -5,8 +5,14 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import "./bootstrap.min.css";
 import "mdb-react-ui-kit/dist/css/mdb.min.css";
+import store from "./store";
+import { Provider } from 'react-redux';
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<App />);
+root.render(
+  <Provider store={store}>
+    <App />
+  </Provider>
+);
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

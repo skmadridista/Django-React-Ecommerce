@@ -18,13 +18,6 @@ class Product(models.Model):
 
     def __str__(self):
         return self.title
-
-class ProductImage(models.Model):
-    product = models.ForeignKey(Product, default=None, on_delete=models.CASCADE)
-    images = models.FileField(upload_to = 'static/images')
- 
-    def __str__(self):
-        return self.post.title
     
 class Review(models.Model):
     product=models.ForeignKey(Product,on_delete=models.SET_NULL,null=True)

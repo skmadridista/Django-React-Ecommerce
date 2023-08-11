@@ -61,7 +61,7 @@ function Ratings({value,text}) {
   }
   return (
     <div>
-      <span>{value} {arr} from {text} Reviews</span>
+      <span>{value} {arr} ({text})</span>
     </div>
   );
 }
